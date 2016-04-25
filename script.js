@@ -6,7 +6,12 @@
 
             // route for the home page
             .when('/', {
+                templateUrl : 'pages/teste.html',
                 controller  : 'mainController'
+            })
+
+            .when('/volume', {
+                templateUrl : 'pages/teste1.html'
             })
 
             // route for the contact page
@@ -17,5 +22,7 @@
 
         // create the controller and inject Angular's $scope
     scotchApp.controller('mainController', function($scope) {
-        alert("teste");
+        
+
+
     });
