@@ -17,5 +17,5 @@
 
         // create the controller and inject Angular's $scope
     scotchApp.controller('mainController', function($scope) {
-        alert("teste");
+        alert("teste1");
     });
