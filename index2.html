@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="scotchApp">
 <title>Help Motorola</title>
 <head>
 	<meta charset="UTF-8">
@@ -10,7 +10,13 @@
 	rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/semantic-ui/2.1.8/semantic.min.css">
 	<script src="https://cdn.jsdelivr.net/semantic-ui/2.1.8/semantic.min.js"></script>
-</head>
+
+
+
+      <!-- load angular and angular route via CDN -->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+          <script src="https//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+      <script src="script.js"></script>
 <style type="text/css">
 	
 	.material-icons{
@@ -27,7 +33,7 @@
 	}
 
 </style>
-<body>
+<body ng-controller="mainController">
 	<div class="ui sidebar inverted vertical menu" style="width: 400px;">
 		<div class="ui inverted segment">
 			<div class="ui inverted form">
@@ -122,16 +128,12 @@
 		</div>
 
 
-		<div class="ui container">
-			<h1>Teste</h1>
-			<span class="ui label">Todos os aparelhos</span>
-			<hr>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<div class="ui container" ng-view>
+
+
+		<!-- Conteudo -->
+
+
 		</div>
 
 
