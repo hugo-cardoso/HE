@@ -14,6 +14,11 @@
                 templateUrl : 'pages/teste1.html'
             })
 
+            .when('/inicial', {
+                templateUrl : 'pages/tela_inicial.html'
+            })
+
+
             // route for the contact page
             .when('/ligar', {
                 templateUrl : 'pages/teste.html'

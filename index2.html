@@ -34,13 +34,10 @@
 
 	</style>
 	<body ng-controller="mainController">
-		<div class="ui sidebar inverted vertical menu" style="width: 400px;">
-			<div class="ui inverted segment">
-				<div class="ui inverted form">
-					<div style="width: 100%;" class="field">
-						<label>Busca:</label>
-						<input id="filter" placeholder="Ex: Bateria, Tela" type="text">
-					</div>
+		<div class="ui sidebar vertical menu" style="width: 400px;">
+			<div style="padding: 15px;" class="ui inverted search">
+				<div style="width: 100%;" class="ui icon input">
+					<input id="filter" class="prompt" type="text" placeholder="Ex: Bateria, Tela"> <i class="search icon"></i>
 				</div>
 			</div>
 			<!-- Funções Básicas -->
@@ -49,24 +46,24 @@
 				<div class="listagem" hidden>
 					<ul>
 						<li class="item i">
-							<a href="#ligar" class="item i">
-								Ligar o aparelho
+							<a href="#ligar" class="item i" data-content="Instrução para ligar o aparelho.">
+								Ligar o aparelho<span hidden>Iniciar Start Boot</span>
 							</a>
 						</li>
 						<li class="item i">
-							<a href="#volume" class="item i">
+							<a href="#volume" class="item i" data-content="Ajustes do volume do aparelho.">
 								Volume
 							</a>
 						</li>
 						<li class="item i">
-							<a href="#aplicativos" class="item i">
-								Aplicativos
+							<a href="#inicial" class="item i" data-content="Instrução de uso da tela inicial.">
+								Tela inicial
 							</a>
 						</li>
 					</ul>
 				</div>
 			</div>
-			<!-- Funções Básicas -->
+			<!-- Bateria -->
 			<div id="bateria">
 				<a id="bateria_cat" style="font-size: 20px;" class="item">Bateria/Carregamento <span style="float: right;"><i class="material-icons">keyboard_arrow_down</i></span><div style="line-height: 20px;" class="ui label" id="badge_bateria">0</div></a>
 				<div class="listagem" hidden>
@@ -87,17 +84,17 @@
 		</div>
 		<div id="conteudo" class="pusher">
 
-			<div class="ui large menu">
+			<div style="border-radius: 0px;" class="ui inverted large menu">
 				<div id="menu" class="item">
 					<i class="sidebar icon"></i>
 				</div>
 				<div class="header item">Troubleshootings</div>
 
 				<div class="right menu">
-					<a data-content="Voltar" class="item">
+					<a href="javascript: window.history.back();" data-content="Voltar" class="item">
 						<i class="material-icons">keyboard_arrow_left</i>
 					</a>
-					<a data-content="Avançar" class="item">
+					<a href="javascript: window.history.forward();" data-content="Avançar" class="item">
 						<i class="material-icons">keyboard_arrow_right</i>
 					</a>
 					<a data-content="Configurações de Internet(APN)" class="item">
@@ -112,10 +109,16 @@
 					<div class="ui dropdown item">
 						Ferramentas <i class="dropdown icon"></i>
 						<div class="menu">
-							<a class="item">English</a>
-							<a class="item">Russian</a>
-							<a class="item">Spanish</a>
-							<a class="item">Spanish</a>
+							<a id="sobre" class="item">Sobre</a>
+						</div>
+					</div>
+					<div class="ui dropdown item">
+						Características <i class="dropdown icon"></i>
+						<div class="menu">
+							<a class="item">Moto E 1º Geração</a>
+							<a class="item">Moto E 2º Geração</a>
+							<a class="item">Moto G 1º Geração</a>
+							<a class="item">Moto G 2º Geração</a>
 						</div>
 					</div>
 <!-- 				<div class="ui right aligned category search item">
@@ -134,6 +137,26 @@
 
 
 				<!-- Conteudo -->
+
+				<div id="sobreModal" class="ui modal">
+					<i class="close icon"></i>
+					<div align="center" class="header">
+						Sobre
+					</div>
+					<div align="center" class="content">
+						<div class="ui small image">
+							<img src="img/light.png">
+						</div>
+						<p>HE(Help Enviroument)</p>
+						<p>1.1v</p>
+						<p>Desenvolvido por: <strong>Hugo Cardoso</strong></p>
+					</div>
+					<div class="actions">
+						<div class="ui black deny button">
+							Fechar
+						</div>
+					</div>
+				</div>
 
 
 			</div>
@@ -172,9 +195,13 @@
 	.dropdown()
 	;
 
-	$('.right.menu a.item')
-	.popup()
-	;
+	$('.right.menu a.item').popup();
+
+	$('.ui.sidebar a.i').popup({
+    position : 'right center',
+  });
+
+	$('.ui.modal').modal('attach events', '#sobre', 'show');
 
 </script>
 <script type="text/javascript">

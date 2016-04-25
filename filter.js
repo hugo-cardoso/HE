@@ -36,23 +36,29 @@
 
  			options.before.call(this, contains, containsNot);
 
- 			contains.show();
- 			containsNot.hide();
+ 			contains.show(function(){
+ 				$("#fbasica_cat").hide();
+ 				$("#bateria_cat").hide();
+ 			});
+ 			containsNot.hide(function(){
+
+ 			});
 
  			if (val === '') {
- 				contains.show();
+ 				contains.show(function(){
+ 					$("#fbasica_cat").show();
+ 					$("#bateria_cat").show();
+ 				});
  				containsNot.show();
  			}
+ 			$(".listagem").show();
+ 			$("#badge_fbasica").html($("#fbasica li:visible").size());
+ 			$("#badge_bateria").html($("#bateria li:visible").size());
 
  			if($("#filter").val() === ""){
  				$(".listagem").hide();
  				$("#badge_fbasica").html($("#fbasica li").size());
  				$("#badge_bateria").html($("#bateria li").size());
- 			}
- 			else{
- 				$(".listagem").show();
- 				$("#badge_fbasica").html($("#fbasica li:visible").size());
- 				$("#badge_bateria").html($("#bateria li:visible").size());
  			}
 
 
