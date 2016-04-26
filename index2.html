@@ -19,6 +19,19 @@
 	<script src="script.js"></script>
 	<style type="text/css">
 
+		h1{
+			color: #2185d0;
+		}
+
+		hr{
+			box-sizing: content-box;
+			height: 0;
+			/* border: 0.5px solid #cecece; */
+			color: #cecece;
+			border: 0px;
+			border-bottom: 1px solid #cecece;
+		}
+
 		.material-icons{
 			float: none;
 		}
@@ -50,6 +63,10 @@
 
 		.i {
 			padding-left: 30px !important;
+		}
+
+		.ui.inverted.menu{
+			background-color: #2185d0;
 		}
 
 	</style>
@@ -106,7 +123,7 @@
 			</div>
 		</div>
 	-->
-	<div class="ui bottom attached segment pushable">
+	<div class="ui bottom attached pushable">
 		<div class="ui left vertical sidebar menu">
 			<div style="padding: 15px;" class="ui inverted search">
 				<div style="width: 100%;" class="ui icon input">
@@ -149,7 +166,7 @@
 			<div id="bateria" class="listagem" hidden>
 				<ul>
 					<li class="item i">
-						<a class="item i">
+						<a href="#next" class="item i">
 							Descarga Rápida
 						</a>
 					</li>
@@ -165,11 +182,35 @@
 		</div>
 		<div id="conteudo" class="pusher">
 
-			<div style="border-radius: 0px;" class="ui inverted small menu">
+			<div id="top_menu" style="border-radius: 0px;" class="ui inverted small menu">
 				<div id="menu" class="item">
 					<i class="sidebar icon"></i>
 				</div>
 				<div class="header item">Troubleshootings</div>
+				<div class="ui icon top left pointing dropdown button item">
+					<i class="wrench icon"></i>
+					<div class="menu">
+						<div class="header">Personalização</div>
+						<div class="item">
+							<i class="dropdown icon"></i>
+							<span class="text">Cores</span>
+							<div class="menu">
+								<div id="persAzul" class="item">
+									<i class="circle blue icon"></i>
+									Azul
+								</div>
+								<div id="persLaranja" class="item">
+									<i class="circle orange icon"></i>
+									Laranja
+								</div>
+								<div id="persRosa" class="item">
+									<i class="circle pink icon"></i>
+									Rosa
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
 				<div class="right menu">
 					<a href="javascript: window.history.back();" data-content="Voltar" class="item">
@@ -249,7 +290,7 @@
 
 
 	</div>
-	</div>
+</div>
 
 </body>
 <script type="text/javascript">
