@@ -52,6 +52,7 @@
             })
             $("#persRosa").click(function(){
                 $("#top_menu").css("background-color", "#e03997");
+                $("h1").css("color", "#e03997");
             })
 
 
