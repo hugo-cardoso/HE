@@ -44,9 +44,11 @@
 
             $("#persAzul").click(function(){
                 $("#top_menu").css("background-color", "#2185d0");
+                $("h1").css("color", "#2185d0");
             })
             $("#persLaranja").click(function(){
                 $("#top_menu").css("background-color", "#f2711c");
+                $("h1").css("color", "#f2711c");
             })
             $("#persRosa").click(function(){
                 $("#top_menu").css("background-color", "#e03997");
