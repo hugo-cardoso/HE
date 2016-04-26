@@ -32,6 +32,16 @@
 			margin: 0px !important;
 		}
 
+		kbd {
+			padding: 2px 4px;
+			font-size: 90%;
+			color: #fff;
+			background-color: #333;
+			border-radius: 3px;
+			-webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+			box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+		}
+
 	</style>
 	<body ng-controller="mainController">
 		<div class="ui sidebar vertical menu" style="width: 400px;">
@@ -84,7 +94,7 @@
 		</div>
 		<div id="conteudo" class="pusher">
 
-			<div style="border-radius: 0px;" class="ui inverted large menu">
+			<div style="border-radius: 0px;" class="ui inverted small menu">
 				<div id="menu" class="item">
 					<i class="sidebar icon"></i>
 				</div>
@@ -97,14 +107,17 @@
 					<a href="javascript: window.history.forward();" data-content="Avançar" class="item">
 						<i class="material-icons">keyboard_arrow_right</i>
 					</a>
-					<a data-content="Configurações de Internet(APN)" class="item">
+					<a href="#internet" data-content="Configurações de Internet(APN)" class="item">
 						<i class="material-icons">public</i>
 					</a>
-					<a data-content="Reset's" class="item">
+					<a  href="#resets" data-content="Reset's" class="item">
 						<i class="material-icons">cloud_upload</i>
 					</a>
 					<a data-content="Listagem de SAM's" class="item">
 						<i class="material-icons">location_on</i>
+					</a>
+					<a data-content="Telefone/Ramais úteis" class="item">
+						<i class="material-icons">phone</i>
 					</a>
 					<div class="ui dropdown item">
 						Ferramentas <i class="dropdown icon"></i>
@@ -191,15 +204,17 @@
 	// 	}, 1500);
 	// }, 1500);
 
-	$('.ui.dropdown')
-	.dropdown()
-	;
+	$('.ui.dropdown').dropdown();
+
+	$('#search-select')
+  .dropdown()
+;
 
 	$('.right.menu a.item').popup();
 
 	$('.ui.sidebar a.i').popup({
-    position : 'right center',
-  });
+		position : 'right center',
+	});
 
 	$('.ui.modal').modal('attach events', '#sobre', 'show');
 
