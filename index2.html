@@ -42,15 +42,28 @@
 			box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
 		}
 
+		.ui.vertical.menu .item > i.material-icons {
+			width: 1.18em;
+			float: right;
+			margin: 0 0 0 .5em;
+		}
+
+		.i {
+			padding-left: 30px !important;
+		}
+
 	</style>
 	<body ng-controller="mainController">
+
+		<!--
 		<div class="ui sidebar vertical menu" style="width: 400px;">
 			<div style="padding: 15px;" class="ui inverted search">
 				<div style="width: 100%;" class="ui icon input">
 					<input id="filter" class="prompt" type="text" placeholder="Ex: Bateria, Tela"> <i class="search icon"></i>
 				</div>
 			</div>
-			<!-- Funções Básicas -->
+			<hr>
+			
 			<div id="fbasica">
 				<a id="fbasica_cat" style="font-size: 20px;" class="item">Funções Básicas <span style="float: right;"><i class="material-icons">keyboard_arrow_down</i></span><div style="line-height: 20px;" class="ui label" id="badge_fbasica">0</div></a>
 				<div class="listagem" hidden>
@@ -73,7 +86,7 @@
 					</ul>
 				</div>
 			</div>
-			<!-- Bateria -->
+			
 			<div id="bateria">
 				<a id="bateria_cat" style="font-size: 20px;" class="item">Bateria/Carregamento <span style="float: right;"><i class="material-icons">keyboard_arrow_down</i></span><div style="line-height: 20px;" class="ui label" id="badge_bateria">0</div></a>
 				<div class="listagem" hidden>
@@ -91,6 +104,64 @@
 					</ul>
 				</div>
 			</div>
+		</div>
+	-->
+	<div class="ui bottom attached segment pushable">
+		<div class="ui left vertical sidebar menu">
+			<div style="padding: 15px;" class="ui inverted search">
+				<div style="width: 100%;" class="ui icon input">
+					<input id="filter" class="prompt" type="text" placeholder="Ex: Bateria, Tela"> <i class="search icon"></i>
+				</div>
+			</div>
+
+			<!-- FBásica -->
+			<a id="fbasica_cat" class="item">
+				<i class="angle down icon"></i>
+				<div class="ui label" id="badge_fbasica">0</div>
+				Funções básicas
+			</a>
+			<div id="fbasica" class="listagem" hidden>
+				<ul>
+					<li class="item i">
+						<a href="#ligar" class="item i" data-content="Instrução para ligar o aparelho.">
+							Ligar o aparelho<span hidden>Iniciar Start Boot</span>
+						</a>
+					</li>
+					<li class="item i">
+						<a href="#volume" class="item i" data-content="Ajustes do volume do aparelho.">
+							Volume
+						</a>
+					</li>
+					<li class="item i">
+						<a href="#inicial" class="item i" data-content="Instrução de uso da tela inicial.">
+							Tela inicial
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<!-- FBásica -->
+			<a id="bateria_cat" class="item">
+				<i class="angle down icon"></i>
+				<div class="ui label" id="badge_bateria">0</div>
+				Bateria/Carregamento
+			</a>
+			<div id="bateria" class="listagem" hidden>
+				<ul>
+					<li class="item i">
+						<a class="item i">
+							Descarga Rápida
+						</a>
+					</li>
+					<li class="item i">
+						<a class="item i">
+							Não carrega
+						</a>
+					</li>
+				</ul>
+			</div>
+
+
 		</div>
 		<div id="conteudo" class="pusher">
 
@@ -178,6 +249,7 @@
 
 
 	</div>
+	</div>
 
 </body>
 <script type="text/javascript">
@@ -207,8 +279,8 @@
 	$('.ui.dropdown').dropdown();
 
 	$('#search-select')
-  .dropdown()
-;
+	.dropdown()
+	;
 
 	$('.right.menu a.item').popup();
 
