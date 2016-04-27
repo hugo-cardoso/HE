@@ -18,70 +18,120 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
 	<script src="script.js"></script>
+	<script src="js/sams.js"></script>
 	<body ng-controller="mainController">
-	<div class="ui bottom attached pushable">
-		<div class="ui left vertical sidebar menu">
-			<div style="padding: 15px;" class="ui inverted search">
-				<div style="width: 100%;" class="ui icon input">
-					<input id="filter" class="prompt" type="text" placeholder="Ex: Bateria, Tela"> <i class="search icon"></i>
+		<div class="ui bottom attached pushable">
+			<div class="ui left vertical sidebar menu">
+
+				<!-- <div class="ui large vertical">
+					<div class="item">
+						<div class="ui icon input">
+							<input id="filter" placeholder="Ex: Bateria, Tela..." type="text">
+							<i class="search icon"></i>
+						</div>
+					</div>
+					<a id="fbasica_cat"  class="item">
+						<div id="badge_fbasica" class="ui label">1</div>
+						Funções básicas
+					</a>
+					<div id="fbasica" class="listagem" hidden>
+						<ul>
+							<li class="item i">
+								<a href="#ligar" class="item i" data-content="Instrução para ligar o aparelho.">
+									Ligar o aparelho<span hidden>Iniciar Start Boot</span>
+								</a>
+							</li>
+							<li class="item i">
+								<a href="#volume" class="item i" data-content="Ajustes do volume do aparelho.">
+									Volume
+								</a>
+							</li>
+							<li class="item i">
+								<a href="#inicial" class="item i" data-content="Instrução de uso da tela inicial.">
+									Tela inicial
+								</a>
+							</li>
+						</ul>
+					</div>
+					<a id="bateria_cat"  class="item">
+						<div id="badge_batera" class="ui label">1</div>
+						Bateria/Carregamento
+					</a>
+					<div id="bateria" class="listagem" hidden>
+					<ul>
+						<li class="item i">
+							<a href="#next" class="item i">
+								Descarga Rápida
+							</a>
+						</li>
+						<li class="item i">
+							<a class="item i">
+								Não carrega
+							</a>
+						</li>
+					</ul>
+					</div>
+				</div> -->
+				 
+				<div style="padding: 15px;" class="ui inverted search">
+					<div style="width: 100%;" class="ui icon input">
+						<input id="filter" class="prompt" type="text" placeholder="Ex: Bateria, Tela"> <i class="search icon"></i>
+					</div>
 				</div>
-			</div>
 
-			<!-- FBásica -->
-			<a id="fbasica_cat" class="item">
-				<i class="angle down icon"></i>
-				<div class="ui label" id="badge_fbasica">0</div>
-				Funções básicas
-			</a>
-			<div id="fbasica" class="listagem" hidden>
-				<ul>
-					<li class="item i">
-						<a href="#ligar" class="item i" data-content="Instrução para ligar o aparelho.">
-							Ligar o aparelho<span hidden>Iniciar Start Boot</span>
-						</a>
-					</li>
-					<li class="item i">
-						<a href="#volume" class="item i" data-content="Ajustes do volume do aparelho.">
-							Volume
-						</a>
-					</li>
-					<li class="item i">
-						<a href="#inicial" class="item i" data-content="Instrução de uso da tela inicial.">
-							Tela inicial
-						</a>
-					</li>
-				</ul>
-			</div>
+				<a id="fbasica_cat" class="item">
+					<i class="angle down icon"></i>
+					<div class="ui label" id="badge_fbasica">0</div>
+					Funções básicas
+				</a>
+				<div id="fbasica" class="listagem" hidden>
+					<ul>
+						<li class="item i">
+							<a href="#ligar" class="item i" data-content="Instrução para ligar o aparelho.">
+								Ligar o aparelho<span hidden>Iniciar Start Boot</span>
+							</a>
+						</li>
+						<li class="item i">
+							<a href="#volume" class="item i" data-content="Ajustes do volume do aparelho.">
+								Volume
+							</a>
+						</li>
+						<li class="item i">
+							<a href="#inicial" class="item i" data-content="Instrução de uso da tela inicial.">
+								Tela inicial
+							</a>
+						</li>
+					</ul>
+				</div>
 
-			<!-- FBásica -->
-			<a id="bateria_cat" class="item">
-				<i class="angle down icon"></i>
-				<div class="ui label" id="badge_bateria">0</div>
-				Bateria/Carregamento
-			</a>
-			<div id="bateria" class="listagem" hidden>
-				<ul>
-					<li class="item i">
-						<a href="#next" class="item i">
-							Descarga Rápida
-						</a>
-					</li>
-					<li class="item i">
-						<a class="item i">
-							Não carrega
-						</a>
-					</li>
-				</ul>
-			</div>
+				<a id="bateria_cat" class="item">
+					<i class="angle down icon"></i>
+					<div class="ui label" id="badge_bateria">0</div>
+					Bateria/Carregamento
+				</a>
+				<div id="bateria" class="listagem" hidden>
+					<ul>
+						<li class="item i">
+							<a href="#next" class="item i">
+								Descarga Rápida
+							</a>
+						</li>
+						<li class="item i">
+							<a class="item i">
+								Não carrega
+							</a>
+						</li>
+					</ul>
+				</div>
 
-
-		</div>
+			
+		</div> 
 		<div id="conteudo" class="pusher">
 
 			<div id="top_menu" style="border-radius: 0px;" class="ui inverted small menu">
-				<div id="menu" class="item">
+				<a id="menu" class="item">
 					<i class="sidebar icon"></i>
-				</div>
+				</a>
 				<div class="header item">Troubleshootings</div>
 				<div class="ui icon top left pointing dropdown button item">
 					<i class="wrench icon"></i>
@@ -121,7 +171,7 @@
 					<a  href="#resets" data-content="Reset's" class="item">
 						<i class="material-icons">cloud_upload</i>
 					</a>
-					<a data-content="Listagem de SAM's" class="item">
+					<a href="#sams" data-content="Listagem de SAM's" class="item">
 						<i class="material-icons">location_on</i>
 					</a>
 					<a data-content="Telefone/Ramais úteis" class="item">
@@ -142,44 +192,44 @@
 							<a class="item">Moto G 2º Geração</a>
 						</div>
 					</div>
+				</div>
 			</div>
-		</div>
 
-		<div id="main">
+			<div id="main">
 
-			<div id="content" class="ui container" ng-view>
+				<div id="content" class="ui container" ng-view>
 
 
-				<!-- Conteudo -->
+					<!-- Conteudo -->
 
-				<div id="sobreModal" class="ui modal">
-					<i class="close icon"></i>
-					<div align="center" class="header">
-						Sobre
-					</div>
-					<div align="center" class="content">
-						<div class="ui small image">
-							<img src="img/light.png">
+					<div id="sobreModal" class="ui modal">
+						<i class="close icon"></i>
+						<div align="center" class="header">
+							Sobre
 						</div>
-						<p>HE(Help Enviroument)</p>
-						<p>1.1v</p>
-						<p>Desenvolvido por: <strong>Hugo Cardoso</strong></p>
-					</div>
-					<div class="actions">
-						<div class="ui black deny button">
-							Fechar
+						<div align="center" class="content">
+							<div class="ui small image">
+								<img src="img/light.png">
+							</div>
+							<p>HE(Help Enviroument)</p>
+							<p>1.1v</p>
+							<p>Desenvolvido por: <strong>Hugo Cardoso</strong></p>
+						</div>
+						<div class="actions">
+							<div class="ui black deny button">
+								Fechar
+							</div>
 						</div>
 					</div>
+
+
 				</div>
 
-
 			</div>
 
+
 		</div>
-
-
 	</div>
-</div>
 
 </body>
 <script type="text/javascript">

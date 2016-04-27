@@ -26,6 +26,11 @@
                 controller  : 'resetsController'
             })
 
+            .when('/sams', {
+                templateUrl : 'pages/menu/sams.html',
+                controller  : 'samsController'
+            })
+
             .when('/next', {
                 templateUrl : 'pages/qualidade_foto.html',
                 controller  : 'sistemaNextController'
@@ -37,25 +42,7 @@
             });
         });
 
-        // create the controller and inject Angular's $scope
-        scotchApp.controller('mainController', function($scope) {
 
-
-            $("#persAzul").click(function(){
-                $("#top_menu").css("background-color", "#2185d0");
-                $("h1").css("color", "#2185d0");
-            })
-            $("#persLaranja").click(function(){
-                $("#top_menu").css("background-color", "#f2711c");
-                $("h1").css("color", "#f2711c");
-            })
-            $("#persRosa").click(function(){
-                $("#top_menu").css("background-color", "#e03997");
-                $("h1").css("color", "#e03997");
-            })
-
-
-        });
 
         // create the controller and inject Angular's $scope
         scotchApp.controller('resetsController', function($scope) {
@@ -86,8 +73,6 @@
 
 
             })
-
-
 
         });
 
@@ -151,5 +136,38 @@
 
 
 });
+
+        // create the controller and inject Angular's $scope
+        scotchApp.controller('mainController', function($scope) {
+
+            var corCache = localStorage.getItem("cor");
+
+            $("#top_menu").css("background-color", corCache);
+
+
+            $("h1").css("color", corCache);
+
+            $("#persAzul").click(function(){
+                $("#top_menu").css("background-color", "#2185d0");
+                $("h1").css("color", "#2185d0");
+
+                localStorage.setItem("cor", "#2185d0");
+            })
+
+            $("#persLaranja").click(function(){
+                $("#top_menu").css("background-color", "#f2711c");
+                $("h1").css("color", "#f2711c");
+
+                localStorage.setItem("cor", "#f2711c");
+            })
+            $("#persRosa").click(function(){
+                $("#top_menu").css("background-color", "#e03997");
+                $("h1").css("color", "#e03997");
+
+                localStorage.setItem("cor", "#e03997");
+            })
+
+
+        });
 
 
