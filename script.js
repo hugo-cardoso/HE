@@ -6,7 +6,6 @@
 
             // route for the home page
             .when('/', {
-                templateUrl : 'pages/teste.html',
                 controller  : 'mainController'
             })
 
@@ -43,6 +42,7 @@
 
 
             $("#persAzul").click(function(){
+                $.notify("Hello World");
                 $("#top_menu").css("background-color", "#2185d0");
                 $("h1").css("color", "#2185d0");
             })
@@ -54,7 +54,6 @@
                 $("#top_menu").css("background-color", "#e03997");
                 $("h1").css("color", "#e03997");
             })
-
 
 
         });
@@ -88,6 +87,8 @@
 
 
             })
+
+
 
         });
 

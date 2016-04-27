@@ -5,11 +5,13 @@
 	<meta charset="UTF-8">
 	<script language="javascript" src="http://code.jquery.com/jquery.min.js"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="https://rawgit.com/notifyjs/notifyjs/master/dist/notify.js"></script>
 	<script type="text/javascript" src="filter.js"></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/semantic-ui/2.1.8/semantic.min.css">
 	<script src="https://cdn.jsdelivr.net/semantic-ui/2.1.8/semantic.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 
 
 
@@ -17,118 +19,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
 	<script src="script.js"></script>
-	<script type="text/javascript">
-		function googleTranslateElementInit() {
-			new google.translate.TranslateElement({pageLanguage: 'pt', includedLanguages: 'en,es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false, multilanguagePage: true}, 'google_translate_element');
-		}
-	</script>
-	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-	<style type="text/css">
-
-		h1{
-			color: #2185d0;
-		}
-
-		hr{
-			box-sizing: content-box;
-			height: 0;
-			/* border: 0.5px solid #cecece; */
-			color: #cecece;
-			border: 0px;
-			border-bottom: 1px solid #cecece;
-		}
-
-		.material-icons{
-			float: none;
-		}
-
-		.ui.sidebar ul li{
-			padding: 0px !important;
-		}
-
-		.ui.sidebar ul{
-			padding: 0px !important;
-			margin: 0px !important;
-		}
-
-		kbd {
-			padding: 2px 4px;
-			font-size: 90%;
-			color: #fff;
-			background-color: #333;
-			border-radius: 3px;
-			-webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
-			box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
-		}
-
-		.ui.vertical.menu .item > i.material-icons {
-			width: 1.18em;
-			float: right;
-			margin: 0 0 0 .5em;
-		}
-
-		.i {
-			padding-left: 30px !important;
-		}
-
-		.ui.inverted.menu{
-			background-color: #2185d0;
-		}
-
-	</style>
 	<body ng-controller="mainController">
-
-		<!--
-		<div class="ui sidebar vertical menu" style="width: 400px;">
-			<div style="padding: 15px;" class="ui inverted search">
-				<div style="width: 100%;" class="ui icon input">
-					<input id="filter" class="prompt" type="text" placeholder="Ex: Bateria, Tela"> <i class="search icon"></i>
-				</div>
-			</div>
-			<hr>
-			
-			<div id="fbasica">
-				<a id="fbasica_cat" style="font-size: 20px;" class="item">Funções Básicas <span style="float: right;"><i class="material-icons">keyboard_arrow_down</i></span><div style="line-height: 20px;" class="ui label" id="badge_fbasica">0</div></a>
-				<div class="listagem" hidden>
-					<ul>
-						<li class="item i">
-							<a href="#ligar" class="item i" data-content="Instrução para ligar o aparelho.">
-								Ligar o aparelho<span hidden>Iniciar Start Boot</span>
-							</a>
-						</li>
-						<li class="item i">
-							<a href="#volume" class="item i" data-content="Ajustes do volume do aparelho.">
-								Volume
-							</a>
-						</li>
-						<li class="item i">
-							<a href="#inicial" class="item i" data-content="Instrução de uso da tela inicial.">
-								Tela inicial
-							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-			
-			<div id="bateria">
-				<a id="bateria_cat" style="font-size: 20px;" class="item">Bateria/Carregamento <span style="float: right;"><i class="material-icons">keyboard_arrow_down</i></span><div style="line-height: 20px;" class="ui label" id="badge_bateria">0</div></a>
-				<div class="listagem" hidden>
-					<ul>
-						<li class="item i">
-							<a class="item i">
-								Descarga Rápida
-							</a>
-						</li>
-						<li class="item i">
-							<a class="item i">
-								Não carrega
-							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	-->
 	<div class="ui bottom attached pushable">
 		<div class="ui left vertical sidebar menu">
 			<div style="padding: 15px;" class="ui inverted search">
@@ -217,7 +108,6 @@
 						</div>
 					</div>
 				</div>
-				<div id="google_translate_element"></div>
 
 				<div class="right menu">
 					<a href="javascript: window.history.back();" data-content="Voltar" class="item">
@@ -253,19 +143,12 @@
 							<a class="item">Moto G 2º Geração</a>
 						</div>
 					</div>
-<!-- 				<div class="ui right aligned category search item">
-					<div class="ui transparent icon input">
-						<input class="prompt" type="text" placeholder="Search animals...">
-						<i class="search link icon"></i>
-					</div>
-					<div class="results"></div>
-				</div> -->
 			</div>
 		</div>
 
 		<div id="main">
 
-			<div class="ui container" ng-view>
+			<div id="content" class="ui container" ng-view>
 
 
 				<!-- Conteudo -->
@@ -337,6 +220,7 @@
 	});
 
 	$('.ui.modal').modal('attach events', '#sobre', 'show');
+
 
 </script>
 <script type="text/javascript">
