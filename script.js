@@ -42,7 +42,6 @@
 
 
             $("#persAzul").click(function(){
-                $.notify("Hello World");
                 $("#top_menu").css("background-color", "#2185d0");
                 $("h1").css("color", "#2185d0");
             })
