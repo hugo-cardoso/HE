@@ -81,3 +81,7 @@
 		.ui.inverted.menu{
 			background-color: #2185d0;
 		}
+
+		.tb{
+			display: none;
+		}
